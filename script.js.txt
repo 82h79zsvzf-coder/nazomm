@@ -1,0 +1,48 @@
+function ilerleZarf() {
+    document.getElementById('zarf-on').style.display = 'none';
+    document.getElementById('zarf-arka').style.display = 'block';
+}
+
+function ilerlePasta() {
+    document.getElementById('zarf-arka').style.display = 'none';
+    document.getElementById('pasta').style.display = 'block';
+    const mumlarDiv = document.getElementById('mumlar');
+    const dilek = document.getElementById('dilek');
+    let mumSayisi = 19;
+    let sönmeSayisi = 0;
+
+    for (let i = 0; i < mumSayisi; i++) {
+        const mum = document.createElement('div');
+        mum.classList.add('mum');
+        mum.addEventListener('click', () => {
+            if (!mum.classList.contains('sonmus')) {
+                mum.classList.add('sonmus');
+                dilek.style.display = 'block';
+                sönmeSayisi++;
+                if (sönmeSayisi === mumSayisi) {
+                    dilek.style.display = 'none';
+                    havaiFisek();
+                }
+            }
+        });
+        mumlarDiv.appendChild(mum);
+    }
+}
+
+function havaiFisek() {
+    const fisekDiv = document.getElementById('havai-fisek');
+    fisekDiv.style.display = 'block';
+
+    for (let i = 0; i < 50; i++) {
+        const fisek = document.createElement('div');
+        fisek.classList.add('fisek');
+        const x = (Math.random() - 0.5) * 400 + 'px';
+        const y = (Math.random() - 1) * 300 + 'px';
+        const renk = `hsl(${Math.random()*360},100%,50%)`;
+        fisek.style.background = renk;
+        fisek.style.setProperty('--x', x);
+        fisek.style.setProperty('--y', y);
+        fisekDiv.appendChild(fisek);
+        setTimeout(() => { fisek.remove(); }, 1000);
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doğum Günü Naz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="zarf-on" class="fade-in">
+    <h1>Doğum günün kutlu olsun Nazom 🎉</h1>
+    <button onclick="ilerleZarf()">İlerle</button>
+</div>
+
+<div id="zarf-arka" class="fade-in" style="display:none;">
+    <p>
+        Nazom, İyi ki doğmuşsun, doğum günün çok kutlu olsun. 
+        Şuan yanında kutlayamamış olsam da ben her zaman yanındayım, 
+        iyi ki varsın, çooooook seviliyorsun ❤️
+    </p>
+    <button onclick="ilerlePasta()">İlerle</button>
+</div>
+
+<div id="pasta" class="fade-in" style="display:none;">
+    <h2>🎂 Mutlu Doğum Günü Naz! 🎂</h2>
+    <div id="mumlar"></div>
+    <h3 id="dilek" style="display:none;">Dilek Tut! 🌟</h3>
+</div>
+
+<div id="havai-fisek" style="display:none;">
+    <h1 id="sonyazi">Mutlu Doğum Günü Naz! 🎉🎆</h1>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

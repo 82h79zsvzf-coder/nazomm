@@ -1,0 +1,87 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    background-color: #fff0f5;
+    padding: 50px;
+    color: #333;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+#mumlar {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.mum {
+    width: 10px;
+    height: 60px;
+    background: orange;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.mum::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 15px;
+    background: yellow;
+    border-radius: 50%;
+    animation: flame 1s infinite alternate;
+}
+
+.mum.sonmus::before {
+    background: grey;
+    animation: none;
+}
+
+@keyframes flame {
+    0% { transform: translateX(-50%) translateY(0) scaleY(1); opacity: 1; }
+    50% { transform: translateX(-50%) translateY(-3px) scaleY(1.1); opacity: 0.8; }
+    100% { transform: translateX(-50%) translateY(0) scaleY(1); opacity: 1; }
+}
+
+/* Havai Fisek Efekti */
+.fisek {
+    position: absolute;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: randomColor();
+    animation: patlama 1s forwards;
+}
+
+@keyframes patlama {
+    0% { transform: translate(0,0) scale(1); opacity:1;}
+    100% { transform: translate(var(--x), var(--y)) scale(0); opacity:0;}
+}
